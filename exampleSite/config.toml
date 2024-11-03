@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = "/"
 languageCode = "en"
 title = "Initio - Free, multipurpose html5 template by GetTemplate"
 
@@ -10,22 +10,22 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
     name = "Sun Wei"
     description = "For any business inquiries, please contact us at"
     email = "service@sunwei.xyz"
-    phone = "+234 23 9873237"
-    address = "234 Hidden Pond Road, Ashland City, TN 37015"
-    year = 2017
+    phone = "+86 xxx xxxx xxxx"
+    address = "Wuhan"
+    year = 2024
     avatar = "me.png"
     avatarclass = "circle"
     background = ""
-    banner = "banner_sun.png"
+    banner = "banner_mountain.jpeg"
     favicon = "images/gt_favicon.png"
     DateForm = "January 2, 2006"
-    author = "Sergey Pozhilov (GetTemplate.com)"
+    author = "MDFriday (mdfriday.com)"
 
-    showSubheader = true
-    showServices = true
-    showRecentWorks = true
-    showDownloads = true
-    showClients = true
+    showSubheader = false
+    showServices = false
+    showRecentWorks = false
+    showDownloads = false
+    showClients = false
 
     showFooterContact = true
     showFooterFollowMe = true
@@ -36,10 +36,7 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
     name = "home"
     url = "/"
     weight = 1
-[[menu.main]]
-    name = "blog"
-    url = "/post/"
-    weight = 5
+
 
 [params.disqus]
     site = "hugo-initio-site.disqus.com"
@@ -51,58 +48,17 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
 [params.google.analytics]
     trackerID = "GA-000000000-0"
 
-[[params.social]]
-	title = "facebook"
-	url = "https://www.facebook.com/nickname"
-    icon = "fab fa-facebook-square"
-    footer = true
-    sharethis = true
-    network = "facebook"
-[[params.social]]
-	title = "twitter"
-	url = "https://twitter.com/nickname"
-    icon = "fab fa-twitter-square"
-    footer = true
-    sharethis = true
-    network = "twitter"
-[[params.social]]
-	title = "instagram"
-	url = "https://www.instagram.com/nickname"
-    icon = "fab fa-instagram"
-    footer = true
-    sharethis = false
-    network = ""
-[[params.social]]
-	title = "google+"
-	url = "https://plus.google.com/+nickname"
-    icon = "fab fa-google-plus-square"
-    footer = false
-    sharethis = true
-    network = "googleplus"
-[[params.social]]
-	title = "linkedin"
-	url = "https://www.linkedin.com/in/nickname"
-    icon = "fab fa-linkedin"
-    footer = false
-    sharethis = true
-    network = "linkedin"
-[[params.social]]
-	title = "tumblr"
-	url = "https://nickname.tumblr.com"
-    icon = "fab fa-tumblr-square"
-    footer = false
-    sharethis = false
-    network = "tumblr"
+
 [[params.social]]
 	title = "github"
-	url = "https://github.com/nickname"
+	url = "https://github.com/sunwei"
     icon = "fab fa-github"
     footer = true
     sharethis = false
     network = ""
 [[params.social]]
 	title = "email"
-	url = "mailto:some.email@somewhere.com"
+	url = "mailto:service@sunwei.xyz"
     icon = "fas fa-envelope-square"
     footer = false
     sharethis = true
