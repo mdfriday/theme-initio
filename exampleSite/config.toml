@@ -7,13 +7,8 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
         path = "github.com/mdfriday/theme-initio"
 
 [params]
-    name = "Sun Wei"
-    description = "For any business inquiries, please contact us at"
-    email = "service@sunwei.xyz"
-    phone = "+86 xxx xxxx xxxx"
     address = "Wuhan"
     year = 2024
-    avatar = "me.png"
     avatarclass = "circle"
     background = ""
     banner = "banner_mountain.jpeg"
@@ -21,11 +16,11 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
     DateForm = "January 2, 2006"
     author = "MDFriday (mdfriday.com)"
 
-    showSubheader = false
-    showServices = false
-    showRecentWorks = false
-    showDownloads = false
-    showClients = false
+    showSubheader = true
+    showServices = true
+    showRecentWorks = true
+    showDownloads = true
+    showClients = true
 
     showFooterContact = true
     showFooterFollowMe = true

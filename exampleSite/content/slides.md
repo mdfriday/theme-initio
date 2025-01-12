@@ -1,8 +1,5 @@
 +++
-menu = "main"
 title = "Slides"
-type = "slides"
-weight = 10
 date = "2024-10-25T12:00:00-00:00"
 +++
 

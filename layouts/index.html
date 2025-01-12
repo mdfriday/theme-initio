@@ -3,17 +3,15 @@
 
     <div class="container">
   
-      {{ if .Site.Params.showSubheader }}
         {{ partial "home/subheader.html" . }}
-      {{ end }}
-      
+
         {{ range .Site.Sections }}
             {{ range .Sections.ByWeight }}
                 {{ $stype := .Type}}
-                {{ if (or (and (eq $stype "service") (.Site.Params.showServices))
-                          (and (eq $stype "recentwork") (.Site.Params.showRecentWorks))
-                          (and (eq $stype "download") (.Site.Params.showDownloads))
-                          (and (eq $stype "client") (.Site.Params.showClients))
+                {{ if (or (and (eq $stype "service") (.Site.Params.showservices))
+                          (and (eq $stype "recentwork") (.Site.Params.showrecentWorks))
+                          (and (eq $stype "download") (.Site.Params.showdownloads))
+                          (and (eq $stype "client") (.Site.Params.showclients))
                           (eq $stype "single")) }}
 
                      <div class="row section featured topspace">
