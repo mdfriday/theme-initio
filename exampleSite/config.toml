@@ -1,36 +1,16 @@
 baseURL = "/"
-languageCode = "en"
+defaultContentLanguage = "zh"
 title = "Initio - Free, multipurpose html5 template by GetTemplate"
+author = "MDFriday (mdfriday.com)"
+description = "Site description for SEO"
+googleAnalytics = "GA-000000000-0"
 
 [module]
     [[module.imports]]
         path = "github.com/mdfriday/theme-initio"
 
 [params]
-    address = "Wuhan"
-    year = 2024
-    avatarclass = "circle"
-    background = ""
     banner = "banner_mountain.jpeg"
-    favicon = "images/gt_favicon.png"
-    DateForm = "January 2, 2006"
-    author = "MDFriday (mdfriday.com)"
-
-    showSubheader = true
-    showServices = true
-    showRecentWorks = true
-    showDownloads = true
-    showClients = true
-
-    showFooterContact = true
-    showFooterFollowMe = true
-    showFooterTextWidget = true
-    showFooterFormWidget = true
-
-[[menu.main]]
-    name = "home"
-    url = "/"
-    weight = 1
 
 
 [params.disqus]
@@ -39,22 +19,3 @@ title = "Initio - Free, multipurpose html5 template by GetTemplate"
 [params.sharethis]
     property = "123456789012345678901234"
     custom = true
-
-[params.google.analytics]
-    trackerID = "GA-000000000-0"
-
-
-[[params.social]]
-	title = "github"
-	url = "https://github.com/sunwei"
-    icon = "fab fa-github"
-    footer = true
-    sharethis = false
-    network = ""
-[[params.social]]
-	title = "email"
-	url = "mailto:service@sunwei.xyz"
-    icon = "fas fa-envelope-square"
-    footer = false
-    sharethis = true
-    network = "email"

@@ -1,93 +1,113 @@
 <footer id="footer">
-	<div class="container">
-		<div class="row">
-			{{ if .Site.Params.showFooterContact }}
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">{{ i18n "footer_contact_title" }}</h3>
-				<div class="widget-body">
-					<p>{{ if .Site.Params.phone }}{{ .Site.Params.phone }}<br>{{ end }}
-					{{ if .Site.Params.email }}<a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a><br>{{ end }}
-					<br>
-					{{ if .Site.Params.address }}{{ .Site.Params.address }}{{ end }}
-					</p>
-				</div>
-			</div>
-			{{ end }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 widget">
+                <h3 class="widget-title">{{ i18n "footer_contact_title" }}</h3>
+                <div class="widget-body">
+                    <p>{{ if .Site.Params.phone }}{{ .Site.Params.phone }}<br>{{ end }}
+                        {{ if .Site.Params.email }}<a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email
+                            }}</a><br>{{ end }}
+                        <br>
+                        {{ if .Site.Params.address }}{{ .Site.Params.address }}{{ end }}
+                    </p>
+                </div>
+            </div>
 
-			{{ if .Site.Params.showFooterFollowMe }}
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">{{ i18n "footer_followme_title" }}</h3>
-				<div class="widget-body">
-					<p class="follow-me-icons">
-            {{ range .Site.Params.social }}
-							{{ if .footer }}
-								<a href="{{ .url }}" target="_blank"><i class="{{ .icon }} fa-1x"></i></a>
-							{{ end }}
+            {{ $socials := .Site.GetPage "social" }}
+            {{ if $socials }}
+            <div class="col-md-3 widget">
+                <h3 class="widget-title">{{ i18n "footer_followme_title" }}</h3>
+                <div class="widget-body">
+                    <p class="follow-me-icons">
+                        {{ range $socials.Pages }}
+
+                        {{ $iconClass := "" }}
+                        {{ if eq .Title "github" }}
+                        {{ $iconClass = "fab fa-github" }}
+                        {{ else if eq .Title "email" }}
+                        {{ $iconClass = "fas fa-envelope-square" }}
+                        {{ else if eq .Title "twitter" }}
+                        {{ $iconClass = "fab fa-twitter-square" }}
+                        {{ else if eq .Title "linkedin" }}
+                        {{ $iconClass = "fab fa-linkedin" }}
+                        {{ else if eq .Title "facebook" }}
+                        {{ $iconClass = "fab fa-facebook-square" }}
+                        {{ else if eq .Title "instagram" }}
+                        {{ $iconClass = "fab fa-instagram" }}
+                        {{ else if eq .Title "google+" }}
+                        {{ $iconClass = "fab fa-google-plus-square" }}
+                        {{ else if eq .Title "tumblr" }}
+                        {{ $iconClass = "fab fa-tumblr-square" }}
+                        {{ else if eq .Title "weibo" }}
+                        {{ $iconClass = "fab fa-weibo" }}
+                        {{ else if eq .Title "weixin" }}
+                        {{ $iconClass = "fab fa-weixin" }}
+                        {{ else if eq .Title "bilibili" }}
+                        {{ $iconClass = "fab fa-bilibili" }}
+                        {{ else }}
+                        {{ $iconClass = "fas fa-globe" }}
+                        {{ end }}
+
+                        <a href="{{ .Params.url }}" target="_blank"><i class="{{ $iconClass }} fa-1x"></i></a>
+                        {{ end }}
+                    </p>
+                </div>
+            </div>
             {{ end }}
-					</p>
-				</div>
-			</div>
-			{{ end }}
 
-			{{ if .Site.Params.showFooterTextWidget }}
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">{{ i18n "footer_text_title" }}</h3>
-				<div class="widget-body">
-					<p>
-						{{ i18n "footer_text1" . | markdownify }}
-					</p>
-					<p>
-						{{ i18n "footer_text2" . | markdownify }}
-					</p>
-				</div>
-			</div>
-			{{ end }}
+            {{ $pt := .Site.GetPage "privacy_terms" }}
+            {{ if $pt }}
+            <div class="col-md-3 widget">
+                <h3 class="widget-title">{{ i18n "footer_text_title" }}</h3>
+                <div class="widget-body">
+                    <p>
+                        {{ $pt.Content }}
+                    </p>
+                </div>
+            </div>
+            {{ end }}
 
-			{{ if .Site.Params.showFooterFormWidget }}
-			<div class="col-md-3 widget">
-				<h3 class="widget-title">{{ i18n "footer_form_title" }}</h3>
-				<div class="widget-body">
-					<p>{{ if .Site.Params.phone }}{{ .Site.Params.phone }}<br>{{ end }}
-					{{ if .Site.Params.email }}<a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a><br>{{ end }}
-					<br>
-					{{ if .Site.Params.address }}{{ .Site.Params.address }}{{ end }}
-					</p>
-				</div>
-			</div>
-			{{ end }}
+            <div class="col-md-3 widget">
+                <h3 class="widget-title">{{ i18n "footer_form_title" }}</h3>
+                <div class="widget-body">
+                    <p>
+                        {{ .Site.Params.icp }}
+                    </p>
+                </div>
+            </div>
 
-		</div> <!-- /row of widgets -->
-	</div>
+        </div> <!-- /row of widgets -->
+    </div>
 </footer>
 
 <footer id="underfooter">
-	<div class="container">
-		<div class="row">
+    <div class="container">
+        <div class="row">
 
-			<div class="col-md-6 widget">
-				<div class="widget-body">
-					<p>{{ if .Site.Params.address}}{{ .Site.Params.address }}{{ end }}</p>
-				</div>
-			</div>
+            <div class="col-md-6 widget">
+                <div class="widget-body">
+                    <p>{{ if .Site.Params.address}}{{ .Site.Params.address }}{{ end }}</p>
+                </div>
+            </div>
 
-			<div class="col-md-6 widget">
-				<div class="widget-body">
-					<p class="text-right">
-                                                {{ if .Site.Copyright }}
-                                                Copyright &copy; {{ .Site.Copyright }} <br>
-                                                {{ else }}
-                                                Copyright &copy; {{ .Site.Params.year }}, {{ .Site.Params.name }}<br>
-                                                {{ end }}
-						Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> -
-						Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a>
-					</p>
-				</div>
-			</div>
+            <div class="col-md-6 widget">
+                <div class="widget-body">
+                    <p class="text-right">
+                        {{ if .Site.Copyright }}
+                        Copyright &copy; {{ .Site.Copyright }} <br>
+                        {{ else }}
+                        Copyright &copy; {{ now.Format "2006" }}, {{ .Site.Params.name }}<br>
+                        {{ end }}
+                        Design: <a href="http://www.gettemplate.com" rel="designer">Initio by GetTemplate</a> -
+                        Powered by: <a href="https://gohugo.io/" rel="poweredby">Hugo</a> -
+                        Build with: <a href="https://mdfriday.com/" rel="poweredby">MDFriday</a>
+                    </p>
+                </div>
+            </div>
 
-		</div> <!-- /row of widgets -->
-	</div>
+        </div> <!-- /row of widgets -->
+    </div>
 </footer>
-
 
 
 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
@@ -102,8 +122,8 @@
 {{ if .Site.Params.disqus -}}
 <script id="dsq-count-scr" src="//{{ .Site.Params.disqus.site }}/count.js" async></script>
 {{ end -}}
-{{ if .Site.Params.google.analytics -}}
-{{ partial "footer/analyticstracking.html" . }}
-{{ end -}}
+
+{{- template "_internal/google_analytics.html" . -}}
+
 </body>
 </html>

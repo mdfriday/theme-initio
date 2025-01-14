@@ -1,14 +1,25 @@
-<div class="row section topspace">
-    {{ range where .Data.Pages "Section" .Section }}
-    <div class="panel panel-cta">
-        <div class="panel-body">
-            <div class="col-lg-8">
-                {{ .Content }}
-            </div>
-            <div class="col-lg-4 text-right">
-                <a href={{ .Params.file }} class="btn btn-primary btn-lg">{{ .Title }}</a>
+{{ $svc := .Site.GetPage "downloads" }}
+{{ if $svc }}
+
+<div class="row section featured topspace">
+    <h2 class="section-title">
+        <span>{{ i18n "downloads_title" }}</span>
+    </h2>
+
+    <div class="row section topspace">
+        {{ range $svc.Pages}}
+        <div class="panel panel-cta">
+            <div class="panel-body">
+                <div class="col-lg-8">
+                    {{ .Content }}
+                </div>
+                <div class="col-lg-4 text-right">
+                    <a href={{ .Params.file | absURL }} class="btn btn-primary btn-lg">{{ .Title }}</a>
+                </div>
             </div>
         </div>
-    </div>
-    {{ end }}
-</div> <!-- /section -->
+        {{ end }}
+    </div> <!-- /section -->
+</div>
+
+{{ end }}

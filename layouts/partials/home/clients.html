@@ -1,7 +1,18 @@
+{{ $svc := .Site.GetPage "clients" }}
+{{ if $svc }}
 
-<div class="col-lg-12">
-    <p>
-      <img src= {{ .Params.image }} alt="">
-    </p>
+<div class="row section featured topspace">
+    <h2 class="section-title">
+        <span>{{ i18n "clients_title" }}</span>
+    </h2>
+
+    <div class="col-lg-12">
+        <p>
+            {{ range $svc.Pages}}
+            <img src={{ .Params.image }} alt="">
+            {{ end }}
+        </p>
+    </div>
 </div>
 
+{{ end }}

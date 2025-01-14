@@ -7,6 +7,18 @@
 [home_clients]
     other = "Clients"
 
+[services_title]
+    other = "Services"
+
+[portfolio_title]
+    other = "Portfolio"
+
+[downloads_title]
+    other = "Downloads"
+
+[clients_title]
+    other = "Clients"
+
 [404_title]
     other = "404"
 [404_description]
@@ -19,14 +31,10 @@
     other = "Follow me"
 
 [footer_text_title]
-    other = "Text widget"
-[footer_text1]
-    other = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!"
-[footer_text2]
-    other = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, nihil natus explicabo ipsum quia iste aliquid repellat eveniet velit ipsa sunt libero sed aperiam id soluta officia asperiores adipisci maxime!"
+    other = "Privacy & Terms"
 
 [footer_form_title]
-    other = "Form widget"
+    other = "Security"
 
 [recent_works_click_text]
     other = "See details"

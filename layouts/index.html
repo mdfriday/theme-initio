@@ -4,40 +4,11 @@
     <div class="container">
   
         {{ partial "home/subheader.html" . }}
+        {{ partial "home/services.html" . }}
+        {{ partial "home/recentworks.html" . }}
+        {{ partial "home/download.html" . }}
+        {{ partial "home/clients.html" . }}
 
-        {{ range .Site.Sections }}
-            {{ range .Sections.ByWeight }}
-                {{ $stype := .Type}}
-                {{ if (or (and (eq $stype "service") (.Site.Params.showservices))
-                          (and (eq $stype "recentwork") (.Site.Params.showrecentWorks))
-                          (and (eq $stype "download") (.Site.Params.showdownloads))
-                          (and (eq $stype "client") (.Site.Params.showclients))
-                          (eq $stype "single")) }}
-
-                     <div class="row section featured topspace">
-                       <h2 class="section-title">
-                         <span>{{.Title}}</span>
-                       </h2>
-                     {{ if eq $stype "service" }}
-                       {{ partial "home/services.html" . }}
-
-                     {{ else if eq $stype "recentwork" }}
-                       {{ partial "home/recentworks.html" . }}
-
-                     {{ else if eq $stype "download" }}
-                       {{ partial "home/download.html" . }}
-
-                     {{ else if eq $stype "client" }}
-                       {{ partial "home/clients.html" . }}
-
-                     {{ else if eq $stype "single"  }}
-                       {{ partial "home/single.html" . }}
-
-                     {{ end }}
-                </div>	<!-- /section -->
-              {{ end }}
-            {{ end }}
-        {{ end }}
     </div>	<!-- /container -->
   </main>
 
